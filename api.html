@@ -20,7 +20,7 @@
                         <a class="drop-choice" href="./api.html#User">User<br></a>
                         <a class="drop-choice" href="./api.html#DataHold">DataHold<br></a>
                         <a class="drop-choice" href="./api.html#Summoner">Summoner<br></a>
-                        <a class="drop-choice" href="./api.html#Rank">Rank<br></a>
+                        <a class="drop-choice" href="./api.html#RankInfo">RankInfo<br></a>
                         <a class="drop-choice" href="./api.html#Match">Match<br></a>
                         <a class="drop-choice" href="./api.html#Player">Player<br></a>
                         <a class="drop-choice" href="./api.html#LiveMatch">LiveMatch<br></a>
@@ -39,7 +39,7 @@
                 <a class="api-classes"href="./api.html#User">User</a>
                 <a class="api-classes"href="./api.html#DataHold">DataHold</a>
                 <a class="api-classes"href="./api.html#Summoner">Summoner</a>
-                <a class="api-classes"href="./api.html#Rank"">Rank</a>
+                <a class="api-classes"href="./api.html#RankInfo">RankInfo</a>
                 <a class="api-classes"href="./api.html#Match">Match</a>
                 <a class="api-classes"href="./api.html#Player">Player</a>
                 <a class="api-classes"href="./api.html#LiveMatch">LiveMatch</a>
@@ -65,14 +65,15 @@
                         </div>
                         <div class="class-methods">
                             <a class="attr" href="./api.html#UsercreateSummoner">createSummoner()</a>
-                            <a class="attr">createDataHold()</a>
-                            <a class="attr">updateRank()</a>
-                            <a class="attr">getRankedSolo()</a>
-                            <a class="attr">getCurrentMatchBySummoner()</a>
-                            <a class="attr">getCurrentMatchByName()</a>
-                            <a class="attr">getMatchByNumber()</a>
-                            <a class="attr">getPastGames()</a>
-                            <a class="attr">close()</a>
+                            <a class="attr" href="./api.html#UsercreateDataHold">User.createDataHold()</a>
+                            <a class="attr" href="./api.html#UserupdateRank">User.updateRank()</a>
+                            <a class="attr" href="./api.html#UsergetRankedSolo">User.getRankedSolo()</a>
+                            <a class="attr" href="./api.html#UsergetCurrentMatchBySummoner">User.getCurrentMatchBySummoner()</a>
+                            <a class="attr" href="./api.html#UsergetCurrentMatchByName">User.getCurrentMatchByName()</a>
+                            <a class="attr" href="./api.html#UsergetMatchByNumber">User.getMatchByNumber()</a>
+                            <a class="attr" href="./api.html#UsergetPlayerFromMatch">User.getPlayerFromMatch()</a>
+                            <a class="attr" href="./api.html#UsergetPastGames">User.getPastGames()</a>
+                            <a class="attr" href="./api.html#Userclose">User.close()</a>
                         </div>
                     </div>
                     <h1 class="code-header">Constructor</h1>
@@ -112,17 +113,117 @@
                     <h1 class="code-header" id="UsercreateSummoner">User.createSummoner()</h1>
                     <span class="code-snippet">User.createSummoner(name, region="na1", default=None, regionalLink=None)</span>
                     <p class="code-desc">
-                        The User constructor is required for all other commands since headers, data, and the key are required.
+                        Creates a Summoner object from a given summoner name and region.
                         <br><br>
                         Requires: <code class="code-snippet">name: str</code>, <code class="code-snippet">region: str</code>
                         <br><br>
-                        Optional: <code class="code-snippet">default: any</code> - What is returned if the summoner doesn't exist
+                        Optional: <code class="code-snippet">default: any</code> - What is returned if the summoner doesn't exist.
                         <br><br>
-                        Optional: <code class="code-snippet">regionalLink: str</code> - Datahold can be passed alternatively for this, but the regional link is required for match history
+                        Optional: <code class="code-snippet">regionalLink: str</code> - Datahold can be passed alternatively for this, but the regional link is required for match history.
                         <br><br>
                         Returns: <a class="code-snippet-link" href="./api.html#Summoner">Summoner: Summoner</a>
                         <br><br>
-                        If the key is invalid or the servers are down, then an error is thrown.
+                    </p>
+                    <h1 class="code-header" id="UserupdateRank">User.updateRank()</h1>
+                    <span class="code-snippet">User.updateRank(summoner)</span>
+                    <p class="code-desc">
+                        Updates the <a class="code-snippet-link" href="./api.html#Summonerranks">Summoner.ranks</a> property of the passed in <a class="code-snippet-link" href="./api.html#Summoner">Summoner</a> object.
+                        <br><br>
+                        Requires: <a class="code-snippet-link" href="./api.html#Summoner">summoner: Summoner</a>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="UsergetRankedSolo">User.getRankedSolo()</h1>
+                    <span class="code-snippet">User.getRankedSolo(summoner, default=None)</span>
+                    <p class="code-desc">
+                        Updates the rank for a Summoner and then returns the ranked information for Ranked-Solo/Duo in the form of a 
+                        <a class="code-snippet-link" href="./api.html#RankInfo">RankInfo</a> object.
+                        <br><br>
+                        Requires: <a class="code-snippet-link" href="./api.html#Summoner">summoner: Summoner</a>
+                        <br><br>
+                        Optional: <code class="code-snippet">default: any</code> - What is returned if the Summoner has no current Ranked-Solo/Duo info
+                        <br><br>
+                        Returns: <a class="code-snippet-link" href="./api.html#RankInfo">RankInfo: RankInfo</a>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="UsergetCurrentMatchBySummoner">User.getCurrentMatchBySummoner()</h1>
+                    <span class="code-snippet">User.getCurrentMatchBySummoner(summoner, default=None)</span>
+                    <p class="code-desc">
+                        Returns the current match of the given Summoner in the form of a 
+                        <a class="code-snippet-link" href="./api.html#LiveMatch">LiveMatch</a> object.
+                        <br><br>
+                        Requires: <a class="code-snippet-link" href="./api.html#Summoner">summoner: Summoner</a>
+                        <br><br>
+                        Optional: <code class="code-snippet">default: any</code> - What is returned if the Summoner isn't currently in a match
+                        <br><br>
+                        Returns: <a class="code-snippet-link" href="./api.html#LiveMatch">LiveMatch: LiveMatch</a>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="UsergetCurrentMatchByName">User.getCurrentMatchByName()</h1>
+                    <span class="code-snippet">User.getCurrentMatchByName(name, region="na1", default=None)</span>
+                    <p class="code-desc">
+                        Returns the current match of a Summoner from a given Summoner name in the form of a 
+                        <a class="code-snippet-link" href="./api.html#LiveMatch">LiveMatch</a> object.
+                        <br><br>
+                        Requires: <code class="code-snippet">name: str</code>, <code class="code-snippet">region: str</code>
+                        <br><br>
+                        Optional: <code class="code-snippet">default: any</code> - What is returned if the Summoner isn't currently in a match
+                        <br><br>
+                        Returns: <a class="code-snippet-link" href="./api.html#LiveMatch">LiveMatch: LiveMatch</a>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="UsergetMatchByNumber">User.getMatchByNumber()</h1>
+                    <span class="code-snippet">User.getMatchByNumber(summoner, index, default=None, queueType=None)</span>
+                    <p class="code-desc">
+                        Returns the Match of a Summoner by a given index, index=0 is the most recent Match.
+                        <a class="code-snippet-link" href="./api.html#Match">Match</a> object.
+                        <br><br>
+                        Requires: <a class="code-snippet-link" href="./api.html#Summoner">summoner: Summoner</a>, <code class="code-snippet">index: int</code>
+                        <br><br>
+                        Optional: <code class="code-snippet">default: any</code> - What is returned if the Summoner isn't currently in a match
+                        <br><br>
+                        Optional: <code class="code-snippet">queueType: str</code> - Allows for a specific type of match to be searched for. Must follow the names defined by the League API
+                        <br><br>
+                        Returns: <a class="code-snippet-link" href="./api.html#Match">Match: Match</a>
+                        <br><br>
+                        If the given index is greater than 99 an error is thrown since the API only returns 100 matches a time.
+                    </p>
+                    <h1 class="code-header" id="UsergetPlayerFromMatch">User.getPlayerFromMatch()</h1>
+                    <span class="code-snippet">User.getPlayerFromMatch(match, summoner, default=None)</span>
+                    <p class="code-desc">
+                        Returns the Player of a certain match by a given summoner name or previously established Summoner object in the form of a 
+                        <a class="code-snippet-link" href="./api.html#Player">Player</a> object.
+                        <br><br>
+                        Requires: <a class="code-snippet-link" href="./api.html#Match">match: Match</a>, <code class="code-snippet">summoner: Summoner or string</code>
+                        <br><br>
+                        Optional: <code class="code-snippet">default: any</code> - What is returned if the Summoner isn't in that match
+                        <br><br>
+                        Returns: <a class="code-snippet-link" href="./api.html#Player">Player: Player</a>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="UsergetPastGames">User.getPastGames()</h1>
+                    <span class="code-snippet">User.getPastGames(summoner, count=20, default=None, time=false, queueType=None)</span>
+                    <p class="code-desc">
+                        Returns a list of <a class="code-snippet-link" href="./api.html#Player">Player</a> objects from a given amount of previous matches.
+                        <br><br>
+                        Requires: <a class="code-snippet-link" href="./api.html#Match">summoner: Summoner</a>, <code class="code-snippet">count: int</code>
+                        <br><br>
+                        Optional: <code class="code-snippet">default: any</code> - What is returned if the Summoner isn't in that match
+                        <br><br>
+                        Optional: <code class="code-snippet">time: bool</code> - If True is passed, then an additional return value of the 
+                        <code class="code-snippet">duration: int</code> of all matches combined will be returned.
+                        <br><br>
+                        Optional: <code class="code-snippet">queueType: str</code> - Allows for a specific type of match to be searched for. Must follow the names defined by the League API
+                        <br><br>
+                        Returns: <code class="code-snippet">matches: list</code> of <a class="code-snippet-link" href="./api.html#Player">Player:Player</a>
+                        <br><br>
+                        The default value for count is 20 because a free API key doesn't allow for more than 20 requests in the same second, so be careful with how you use this command.
+                    </p>
+                    <h1 class="code-header" id="Userclose">User.close()</h1>
+                    <span class="code-snippet">User.updateRank(summoner)</span>
+                    <p class="code-desc">
+                        Saves the <a class="code-snippet-link" href="./api.html#UserDataHold">User.DataHold</a> to the current active directory.
+                        <br><br>
+                        Throws an error if the User does not contain a <a class="code-snippet-link" href="./api.html#UserDataHold">User.DataHold</a>.
                     </p>
                 </section>
                 <section id="DataHold">
@@ -137,8 +238,8 @@
                         Testing
                     </p>
                 </section>
-                <section id="Rank">
-                    <h1 class="api-header">Rank</h1>
+                <section id="RankInfo">
+                    <h1 class="api-header">RankInfo</h1>
                     <p class="api-paragraph">
                         Testing
                     </p>
