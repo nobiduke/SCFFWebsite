@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body class="dark-gray">
+        <div class="main-top" id="main-top">
+            <div class="title" id="main-title">
+                <span>Some Cure For Fools</span>
+            </div>
+            <div class="menu-bars" id="menu">
+
+                <div class="menu-option" id="home-tab">
+                    <span class="home-button" onclick="openHome()">Home</span>
+                </div>
+                <div class="menu-option" id="api-tab">
+                    <span class="api-button">API</span>
+                    <div class="drop-down" id="api-drop-down">
+                        <a class="drop-choice" href="./api.html#Intro">Intro<br></a>
+                        <a class="drop-choice" href="./api.html#User">User<br></a>
+                        <a class="drop-choice" href="./api.html#DataHold">DataHold<br></a>
+                        <a class="drop-choice" href="./api.html#Summoner">Summoner<br></a>
+                        <a class="drop-choice" href="./api.html#Rank">Rank<br></a>
+                        <a class="drop-choice" href="./api.html#Match">Match<br></a>
+                        <a class="drop-choice" href="./api.html#Player">Player<br></a>
+                        <a class="drop-choice" href="./api.html#LiveMatch">LiveMatch<br></a>
+                        <a class="drop-choice" href="./api.html#LivePlayer">LivePlayer<br></a>
+                    </div>
+                </div>
+                <div class="menu-option" id="about-me-tab">
+                    <span class="about-me-button">About Me</span>
+                </div>
+
+            </div>
+        </div>
+        <div class="api-body" id="api-body">
+            <div class="api-classes-holder">
+                <a class="api-classes"href="./api.html#Intro">Intro</a>
+                <a class="api-classes"href="./api.html#User">User</a>
+                <a class="api-classes"href="./api.html#DataHold">DataHold</a>
+                <a class="api-classes"href="./api.html#Summoner">Summoner</a>
+                <a class="api-classes"href="./api.html#Rank"">Rank</a>
+                <a class="api-classes"href="./api.html#Match">Match</a>
+                <a class="api-classes"href="./api.html#Player">Player</a>
+                <a class="api-classes"href="./api.html#LiveMatch">LiveMatch</a>
+                <a class="api-classes"href="./api.html#LivePlayer">LivePlayer</a>
+            </div>
+            <div class="api-text">
+                <section id="Intro">
+                    <h1 class="api-header">Intro</h1>
+                    <p class="api-paragraph">
+                        Welcome to the scff python framework for the league of legends api.
+                    </p>
+                </section>
+                <section id="User">
+                    <h1 class="api-header">User</h1>
+                    <p class="api-paragraph">
+                        The main class which is used as the client through which all other commands are used.
+                    </p>
+                    <div class="class-desc">
+                        <div class="class-attr">
+                            <a class="attr" href="./api.html#UserDataHold">User.DataHold</a>
+                            <a class="attr" href="./api.html#Userheaders">User.headers</a>
+                            <a class="attr" href="./api.html#Userkey">User.key</a>
+                        </div>
+                        <div class="class-methods">
+                            <a class="attr" href="./api.html#UsercreateSummoner">createSummoner()</a>
+                            <a class="attr">createDataHold()</a>
+                            <a class="attr">updateRank()</a>
+                            <a class="attr">getRankedSolo()</a>
+                            <a class="attr">getCurrentMatchBySummoner()</a>
+                            <a class="attr">getCurrentMatchByName()</a>
+                            <a class="attr">getMatchByNumber()</a>
+                            <a class="attr">getPastGames()</a>
+                            <a class="attr">close()</a>
+                        </div>
+                    </div>
+                    <h1 class="code-header">Constructor</h1>
+                    <span class="code-snippet">User(*RIOT_TOKEN_AS_STRING*)</span>
+                    <p class="code-desc">
+                        The User constructor is required for all other commands since headers, data, and the key are required.
+                        <br><br>
+                        Requires: <code class="code-snippet">Token: str</code>
+                        <br><br>
+                        Returns: <a class="code-snippet-link" href="./api.html#User">User: User</a>
+                        <br><br>
+                        If the key is invalid or the servers are down, then an error is thrown.
+                    </p>
+                    <h1 class="code-header" id="UserDataHold">User.DataHold</h1>
+                    <p class="code-desc">
+                        The DataHold attribute can be used to implement the datadragon libraries with you code easily to name champions, spells, runes, and images.
+                        <br><br>
+                        Type: <a class="code-snippet-link" href="./api.html#DataHold">self.DataHold: DataHold</a>
+                        <br><br>
+                        This attribute can be ignored if champion information is being ignored and nondependent stats are accessed.
+                    </p>
+                    <h1 class="code-header" id="Userheaders">User.headers</h1>
+                    <p class="code-desc">
+                        The default headers for requesting links from the API. Shouldn't be changed, but it can be if needed.
+                        <br><br>
+                        Type: <code class="code-snippet">self.headers: dict</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="Userkey">User.key</h1>
+                    <p class="code-desc">
+                        The key that is used with every single API call. If you don't have a licensed product with RIOT, this must be refreshed
+                        every 24 hours.
+                        <br><br>
+                        Type: <code class="code-snippet">self.key: str</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="UsercreateSummoner">User.createSummoner()</h1>
+                    <span class="code-snippet">User.createSummoner(name, region="na1", default=None, regionalLink=None)</span>
+                    <p class="code-desc">
+                        The User constructor is required for all other commands since headers, data, and the key are required.
+                        <br><br>
+                        Requires: <code class="code-snippet">name: str</code>, <code class="code-snippet">region: str</code>
+                        <br><br>
+                        Optional: <code class="code-snippet">default: any</code> - What is returned if the summoner doesn't exist
+                        <br><br>
+                        Optional: <code class="code-snippet">regionalLink: str</code> - Datahold can be passed alternatively for this, but the regional link is required for match history
+                        <br><br>
+                        Returns: <a class="code-snippet-link" href="./api.html#Summoner">Summoner: Summoner</a>
+                        <br><br>
+                        If the key is invalid or the servers are down, then an error is thrown.
+                    </p>
+                </section>
+                <section id="DataHold">
+                    <h1 class="api-header">DataHold</h1>
+                    <p class="api-paragraph">
+                        Testing
+                    </p>
+                </section>
+                <section id="Summoner">
+                    <h1 class="api-header">Summoner</h1>
+                    <p class="api-paragraph">
+                        Testing
+                    </p>
+                </section>
+                <section id="Rank">
+                    <h1 class="api-header">Rank</h1>
+                    <p class="api-paragraph">
+                        Testing
+                    </p>
+                </section>
+                <section id="Match">
+                    <h1 class="api-header">Match</h1>
+                    <p class="api-paragraph">
+                        Testing
+                    </p>
+                </section>
+                <section id="Player">
+                    <h1 class="api-header">Player</h1>
+                    <p class="api-paragraph">
+                        Testing
+                    </p>
+                </section>
+                <section id="LiveMatch">
+                    <h1 class="api-header">LiveMatch</h1>
+                    <p class="api-paragraph">
+                        Testing
+                    </p>
+                </section>
+                <section id="LivePlayer">
+                    <h1 class="api-header">LivePlayer</h1>
+                    <p class="api-paragraph">
+                        Testing
+                    </p>
+                </section>
+            </div>
+        </div> 
+
+        <script src="./main.js"></script>      
+    </body>
+</html>
