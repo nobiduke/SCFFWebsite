@@ -49,7 +49,7 @@
                 <section id="Intro">
                     <h1 class="api-header">Intro</h1>
                     <p class="api-paragraph">
-                        Welcome to the scff python framework for the league of legends api.
+                        Welcome to the scff python framework for the league of legends api. Current version: scff.py 0.7
                     </p>
                 </section>
                 <section id="User">
@@ -79,7 +79,7 @@
                     <h1 class="code-header">Constructor</h1>
                     <span class="code-snippet">User(*RIOT_TOKEN_AS_STRING*)</span>
                     <p class="code-desc">
-                        The User constructor is required for all other commands since headers, data, and the key are required.
+                        The <a class="code-snippet-link" href="./api.html#User">User</a> constructor is required for all other commands since headers, data, and the key are required.
                         <br><br>
                         Requires: <code class="code-snippet">Token: str</code>
                         <br><br>
@@ -91,7 +91,7 @@
                     <p class="code-desc">
                         The DataHold attribute can be used to implement the datadragon libraries with you code easily to name champions, spells, runes, and images.
                         <br><br>
-                        Type: <a class="code-snippet-link" href="./api.html#DataHold">self.DataHold: DataHold</a>
+                        Type: <a class="code-snippet-link" href="./api.html#DataHold">DataHold</a>
                         <br><br>
                         This attribute can be ignored if champion information is being ignored and nondependent stats are accessed.
                     </p>
@@ -99,7 +99,7 @@
                     <p class="code-desc">
                         The default headers for requesting links from the API. Shouldn't be changed, but it can be if needed.
                         <br><br>
-                        Type: <code class="code-snippet">self.headers: dict</code>
+                        Type: <code class="code-snippet">dict</code>
                         <br><br>
                     </p>
                     <h1 class="code-header" id="Userkey">User.key</h1>
@@ -107,7 +107,7 @@
                         The key that is used with every single API call. If you don't have a licensed product with RIOT, this must be refreshed
                         every 24 hours.
                         <br><br>
-                        Type: <code class="code-snippet">self.key: str</code>
+                        Type: <code class="code-snippet">str</code>
                         <br><br>
                     </p>
                     <h1 class="code-header" id="UsercreateSummoner">User.createSummoner()</h1>
@@ -181,7 +181,8 @@
                         <br><br>
                         Optional: <code class="code-snippet">default: any</code> - What is returned if the Summoner isn't currently in a match
                         <br><br>
-                        Optional: <code class="code-snippet">queueType: str</code> - Allows for a specific type of match to be searched for. Must follow the names defined by the League API
+                        Optional: <code class="code-snippet">queueType: int</code> - Allows for a specific type of match to be searched for. Must use id number provided by DataDragon or 
+                        <a class="code-snippet-link" href="./api.html#DataHold">DataHold</a>
                         <br><br>
                         Returns: <a class="code-snippet-link" href="./api.html#Match">Match: Match</a>
                         <br><br>
@@ -205,14 +206,15 @@
                     <p class="code-desc">
                         Returns a list of <a class="code-snippet-link" href="./api.html#Player">Player</a> objects from a given amount of previous matches.
                         <br><br>
-                        Requires: <a class="code-snippet-link" href="./api.html#Match">summoner: Summoner</a>, <code class="code-snippet">count: int</code>
+                        Requires: <a class="code-snippet-link" href="./api.html#Summoner">summoner: Summoner</a>, <code class="code-snippet">count: int</code>
                         <br><br>
                         Optional: <code class="code-snippet">default: any</code> - What is returned if the Summoner isn't in that match
                         <br><br>
                         Optional: <code class="code-snippet">time: bool</code> - If True is passed, then an additional return value of the 
                         <code class="code-snippet">duration: int</code> of all matches combined will be returned.
                         <br><br>
-                        Optional: <code class="code-snippet">queueType: str</code> - Allows for a specific type of match to be searched for. Must follow the names defined by the League API
+                        Optional: <code class="code-snippet">queueType: str</code> - Allows for a specific type of match to be searched for. Must use id number provided by DataDragon or 
+                        <a class="code-snippet-link" href="./api.html#DataHold">DataHold</a>
                         <br><br>
                         Returns: <code class="code-snippet">matches: list</code> of <a class="code-snippet-link" href="./api.html#Player">Player:Player</a>
                         <br><br>
@@ -229,7 +231,150 @@
                 <section id="DataHold">
                     <h1 class="api-header">DataHold</h1>
                     <p class="api-paragraph">
-                        Testing
+                        The holder of most of DataDragons important information. It can be used to exchange an id of a spell, rune, champion, or other for information.
+                    </p>
+                    <div class="class-desc">
+                        <div class="class-attr">
+                            <a class="attr" href="./api.html#DataHoldexist">DataHold.exist</a>
+                            <a class="attr" href="./api.html#DataHoldheaders">DataHold.headers</a>
+                            <a class="attr" href="./api.html#DataHoldplatforms">DataHold.platforms</a>
+                            <a class="attr" href="./api.html#DataHoldregionalLinks">DataHold.regionalLinks</a>
+                            <a class="attr" href="./api.html#DataHoldversion">DataHold.version</a>
+                            <a class="attr" href="./api.html#DataHoldchampions">DataHold.champions</a>
+                            <a class="attr" href="./api.html#DataHoldrunes">DataHold.runes</a>
+                            <a class="attr" href="./api.html#DataHoldruneGenre">DataHold.runeGenre</a>
+                            <a class="attr" href="./api.html#DataHoldperkStyles">DataHold.perkStyles</a>
+                            <a class="attr" href="./api.html#DataHoldspells">DataHold.spells</a>
+                            <a class="attr" href="./api.html#DataHoldupdates">DataHold.updates</a>
+                            <a class="attr" href="./api.html#DataHoldqueueTypes">DataHold.queueTypes</a>
+                            <a class="attr" href="./api.html#DataHoldisChanged">DataHold.isChanged</a>
+                        </div>
+                        <div class="class-methods">
+                            <a class="attr" href="./api.html#DataHoldgetUpdate">DataHold.getUpdate()</a>
+                            <a class="attr" href="./api.html#DataHoldupdateChamps">DataHold.updateChamps()</a>
+                            <a class="attr" href="./api.html#DataHoldupdateRunes">DataHold.updateRunes()</a>
+                            <a class="attr" href="./api.html#DataHoldupdateSpells">DataHold.updateSpells()</a>
+                            <a class="attr" href="./api.html#DataHoldupdateQueueTypes">DataHold.updateQueueTypes()</a>
+                            <a class="attr" href="./api.html#DataHoldisUpdatedAndFilled">DataHold.isUpdatedAndFilled()</a>
+                            <a class="attr" href="./api.html#DataHoldisFull">DataHold.isFull()</a>
+                            <a class="attr" href="./api.html#DataHoldfill">DataHold.fill()</a>
+                            <a class="attr" href="./api.html#DataHoldupdate">DataHold.update()</a>
+                            <a class="attr" href="./api.html#DataHoldgetSpellName">DataHold.getSpellName()</a>
+                            <a class="attr" href="./api.html#DataHoldgetRuneName">DataHold.getRuneName()</a>
+                            <a class="attr" href="./api.html#DataHoldgetRuneImg">DataHold.getRuneImg()</a>
+                            <a class="attr" href="./api.html#DataHoldgetPerkStyleName">DataHold.getPerkStyleName()</a>
+                            <a class="attr" href="./api.html#DataHoldgetChampionName">DataHold.getChampionName()</a>
+                            <a class="attr" href="./api.html#DataHoldgetChampionImgFull">DataHold.getChampionImgFull()</a>
+                            <a class="attr" href="./api.html#DataHoldgetChampionBlurb">DataHold.getChampionBlurb()</a>
+                            <a class="attr" href="./api.html#DataHoldgetChampionTitle">DataHold.getChampionTitle()</a>
+                            <a class="attr" href="./api.html#DataHoldgetRegionByPlatform">DataHold.getRegionByPlatform()</a>
+                            <a class="attr" href="./api.html#DataHoldisAlive">DataHold.isAlive()</a>
+                            <a class="attr" href="./api.html#DataHoldclose">DataHold.close()</a>
+                        </div>
+                    </div>
+                    <h1 class="code-header">Constructor</h1>
+                    <span class="code-snippet">DataHold(filename=None, empty=False)</span>
+                    <p class="code-desc">
+                        Creates a <a class="code-snippet-link" href="./api.html#DataHold">DataHold</a> which can act independently from the <a class="code-snippet-link" href="./api.html#User">User</a>, 
+                        but is also included in the <a class="code-snippet-link" href="./api.html#DataHold">DataHold</a> class.
+                        <br><br>
+                        Optional: <code class="code-snippet">filename: str</code> - If a datahold already existed previously, it can be opened with this argument
+                        <br><br>
+                        Optional: <code class="code-snippet">empty: bool</code> - Allows the User class to create an empty DataHold
+                        <br><br>
+                        Returns: <a class="code-snippet-link" href="./api.html#DataHold">DataHold: Datahold</a>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="DataHoldexist">DataHold.exist</h1>
+                    <p class="code-desc">
+                        Is used to create a <a class="code-snippet-link" href="./api.html#DataHold">DataHold</a> that doesn't hold anything for the <a class="code-snippet-link" href="./api.html#User">User</a> class.
+                        <br><br>
+                        Type: <code class="code-snippet">bool</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="DataHoldheaders">DataHold.headers</h1>
+                    <p class="code-desc">
+                        Allows the <a class="code-snippet-link" href="./api.html#DataHold">DataHold</a> to act independently from the <a class="code-snippet-link" href="./api.html#User">User</a> class.
+                        <br><br>
+                        Type: <code class="code-snippet">dict</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="DataHoldplatforms">DataHold.platforms</h1>
+                    <p class="code-desc">
+                        Dictionary to exchange the lower case regions for the ones used by DataDragon.
+                        <br><br>
+                        Type: <code class="code-snippet">dict</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="DataHoldregionalLinks">DataHold.regionalLinks</h1>
+                    <p class="code-desc">
+                        Dictionary to exchange the platforms for the regional links required for match history.
+                        <br><br>
+                        Type: <code class="code-snippet">dict</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="DataHoldversion">DataHold.version</h1>
+                    <p class="code-desc">
+                        The current version of League Legends that the <a class="code-snippet-link" href="./api.html#DataHold">DataHold</a> is updated to.
+                        <br><br>
+                        Type: <code class="code-snippet">str</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="DataHoldchampions">DataHold.champions</h1>
+                    <p class="code-desc">
+                        Holds all information for each champion categorized by ids.
+                        <br><br>
+                        Type: <code class="code-snippet">dict</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="DataHoldrunes">DataHold.runes</h1>
+                    <p class="code-desc">
+                        Holds all information for each rune categorized by ids.
+                        <br><br>
+                        Type: <code class="code-snippet">dict</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="DataHoldruneGenres">DataHold.runeGenres</h1>
+                    <p class="code-desc">
+                        Holds all ids for runes categorized into their specific style.
+                        <br><br>
+                        Type: <code class="code-snippet">dict</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="DataHoldperkStyles">DataHold.perkStyles</h1>
+                    <p class="code-desc">
+                        Holds all information for each perk style categorized by ids.
+                        <br><br>
+                        Type: <code class="code-snippet">dict</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="DataHoldspells">DataHold.spells</h1>
+                    <p class="code-desc">
+                        Holds all summoner spells categorized by ids.
+                        <br><br>
+                        Type: <code class="code-snippet">dict</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="DataHoldupdates">DataHold.updates</h1>
+                    <p class="code-desc">
+                        Contains each version that each section has been updated to. <a class="code-snippet-link" href="./api.html#DataHoldversion">DataHold.version</a> is lowest of these.
+                        <br><br>
+                        Type: <code class="code-snippet">dict</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="DataHoldqueueTypes">DataHold.queueTypes</h1>
+                    <p class="code-desc">
+                        Holds all queueTypes categorized by ids.
+                        <br><br>
+                        Type: <code class="code-snippet">dict</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="DataHoldisChanged">DataHold.isChanged</h1>
+                    <p class="code-desc">
+                        This value updates if the <a class="code-snippet-link" href="./api.html#DataHold">DataHold</a> was changed so it knows whether to update the file when it is closed.
+                        <br><br>
+                        Type: <code class="code-snippet">bool</code>
+                        <br><br>
                     </p>
                 </section>
                 <section id="Summoner">
