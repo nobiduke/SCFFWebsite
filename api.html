@@ -2,6 +2,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body class="dark-gray">
         <div class="main-top" id="main-top">
@@ -99,7 +100,7 @@
                     <p class="code-desc">
                         The default headers for requesting links from the API. Shouldn't be changed, but it can be if needed.
                         <br><br>
-                        Type: <code class="code-snippet">dict</code>
+                        Type: <code class="code-snippet">dict{str: str}</code>
                         <br><br>
                     </p>
                     <h1 class="code-header" id="Userkey">User.key</h1>
@@ -296,21 +297,21 @@
                     <p class="code-desc">
                         Allows the <a class="code-snippet-link" href="./api.html#DataHold">DataHold</a> to act independently from the <a class="code-snippet-link" href="./api.html#User">User</a> class.
                         <br><br>
-                        Type: <code class="code-snippet">dict</code>
+                        Type: <code class="code-snippet">dict{str: str}</code>
                         <br><br>
                     </p>
                     <h1 class="code-header" id="DataHoldplatforms">DataHold.platforms</h1>
                     <p class="code-desc">
                         Dictionary to exchange the lower case regions for the ones used by DataDragon.
                         <br><br>
-                        Type: <code class="code-snippet">dict</code>
+                        Type: <code class="code-snippet">dict{str: str}</code>
                         <br><br>
                     </p>
                     <h1 class="code-header" id="DataHoldregionalLinks">DataHold.regionalLinks</h1>
                     <p class="code-desc">
                         Dictionary to exchange the platforms for the regional links required for match history.
                         <br><br>
-                        Type: <code class="code-snippet">dict</code>
+                        Type: <code class="code-snippet">dict{str: str}</code>
                         <br><br>
                     </p>
                     <h1 class="code-header" id="DataHoldversion">DataHold.version</h1>
@@ -324,49 +325,49 @@
                     <p class="code-desc">
                         Holds all information for each champion categorized by ids.
                         <br><br>
-                        Type: <code class="code-snippet">dict</code>
+                        Type: <code class="code-snippet">dict{str: dict{str: str}}</code>
                         <br><br>
                     </p>
                     <h1 class="code-header" id="DataHoldrunes">DataHold.runes</h1>
                     <p class="code-desc">
                         Holds all information for each rune categorized by ids.
                         <br><br>
-                        Type: <code class="code-snippet">dict</code>
+                        Type: <code class="code-snippet">dict{str: dict{str: str}}</code>
                         <br><br>
                     </p>
                     <h1 class="code-header" id="DataHoldruneGenres">DataHold.runeGenres</h1>
                     <p class="code-desc">
                         Holds all ids for runes categorized into their specific style.
                         <br><br>
-                        Type: <code class="code-snippet">dict</code>
+                        Type: <code class="code-snippet">dict{str: str}</code>
                         <br><br>
                     </p>
                     <h1 class="code-header" id="DataHoldperkStyles">DataHold.perkStyles</h1>
                     <p class="code-desc">
                         Holds all information for each perk style categorized by ids.
                         <br><br>
-                        Type: <code class="code-snippet">dict</code>
+                        Type: <code class="code-snippet">dict{str: int}</code>
                         <br><br>
                     </p>
                     <h1 class="code-header" id="DataHoldspells">DataHold.spells</h1>
                     <p class="code-desc">
                         Holds all summoner spells categorized by ids.
                         <br><br>
-                        Type: <code class="code-snippet">dict</code>
+                        Type: <code class="code-snippet">dict{str: str}</code>
                         <br><br>
                     </p>
                     <h1 class="code-header" id="DataHoldupdates">DataHold.updates</h1>
                     <p class="code-desc">
-                        Contains each version that each section has been updated to. <a class="code-snippet-link" href="./api.html#DataHoldversion">DataHold.version</a> is lowest of these.
+                        Contains each version that each section has been updated to. <a class="code-snippet-link" href="./api.html#DataHoldversion">DataHold.version</a> is highest of these.
                         <br><br>
-                        Type: <code class="code-snippet">dict</code>
+                        Type: <code class="code-snippet">dict{str: str}</code>
                         <br><br>
                     </p>
                     <h1 class="code-header" id="DataHoldqueueTypes">DataHold.queueTypes</h1>
                     <p class="code-desc">
                         Holds all queueTypes categorized by ids.
                         <br><br>
-                        Type: <code class="code-snippet">dict</code>
+                        Type: <code class="code-snippet">dict{str: str}</code>
                         <br><br>
                     </p>
                     <h1 class="code-header" id="DataHoldisChanged">DataHold.isChanged</h1>
@@ -374,6 +375,81 @@
                         This value updates if the <a class="code-snippet-link" href="./api.html#DataHold">DataHold</a> was changed so it knows whether to update the file when it is closed.
                         <br><br>
                         Type: <code class="code-snippet">bool</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="DataHoldgetUpdate">DataHold.getUpdate()</h1>
+                    <span class="code-snippet">DataHold.getUpdate()</span>
+                    <p class="code-desc">
+                        Determines if the <a class="code-snippet-link" href="./api.html#DataHold">DataHold</a> version matches the most recent version of the game released.
+                        <br><br>
+                        Returns: <code class="code-snippet">isUpdated: bool</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="DataHoldupdateChamps">DataHold.updateChamps()</h1>
+                    <span class="code-snippet">DataHold.updateChampions()</span>
+                    <p class="code-desc">
+                        Updates <a class="code-snippet-link" href="./api.html#DataHoldchampions">DataHold.champions</a> by accessing DataDragon.
+                        <br><br>
+                        Returns: <code class="code-snippet">None</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="DataHoldupdateRunes">DataHold.updateRunes()</h1>
+                    <span class="code-snippet">DataHold.updateRunes()</span>
+                    <p class="code-desc">
+                        Updates <a class="code-snippet-link" href="./api.html#DataHoldrunes">DataHold.runes</a>, <a class="code-snippet-link" href="./api.html#DataHoldruneGenres">DataHold.runeGenres</a>, 
+                        <a class="code-snippet-link" href="./api.html#DataHoldperkStyles">DataHold.perkStyles</a> and  by accessing DataDragon.
+                        <br><br>
+                        Returns: <code class="code-snippet">None</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="DataHoldupdateSpells">DataHold.updateSpells()</h1>
+                    <span class="code-snippet">DataHold.updateSpells()</span>
+                    <p class="code-desc">
+                        Updates <a class="code-snippet-link" href="./api.html#DataHoldchampions">DataHold.Spells</a> by accessing DataDragon.
+                        <br><br>
+                        Returns: <code class="code-snippet">None</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="DataHoldupdateQueueTypes">DataHold.updateQueueTypes()</h1>
+                    <span class="code-snippet">DataHold.updateQueueTypes()</span>
+                    <p class="code-desc">
+                        Updates <a class="code-snippet-link" href="./api.html#DataHoldqueueTypes">DataHold.queueTypes</a> by accessing DataDragon.
+                        <br><br>
+                        Returns: <code class="code-snippet">None</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="DataHoldisUpdatedAndFilled">DataHold.isUpdatedAndFilled()</h1>
+                    <span class="code-snippet">DataHold.isUpdatedAndFilled()</span>
+                    <p class="code-desc">
+                        Returns true if every piece of the <a class="code-snippet-link" href="./api.html#DataHold">DataHold</a> is updated to the most recent version and filled.
+                        <br><br>
+                        Returns: <code class="code-snippet">isUpdatedAndFilled: bool</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="DataHoldisFull">DataHold.isFull()</h1>
+                    <span class="code-snippet">DataHold.isFull()</span>
+                    <p class="code-desc">
+                        Returns true if every piece of the <a class="code-snippet-link" href="./api.html#DataHold">DataHold</a> is filled with some information.
+                        <br><br>
+                        Returns: <code class="code-snippet">isFull: bool</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="DataHoldfill">DataHold.fill()</h1>
+                    <span class="code-snippet">DataHold.fill()</span>
+                    <p class="code-desc">
+                        Makes sure that each hold is filled with some information, but does not makes sure it is filled with the most recent version. For that use 
+                        <a class="code-snippet-link" href="./api.html#DataHoldupdate">DataHold.update()</a>.
+                        <br><br>
+                        Returns: <code class="code-snippet">None</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="DataHoldupdate">DataHold.update()</h1>
+                    <span class="code-snippet">DataHold.update()</span>
+                    <p class="code-desc">
+                        Makes sure that each hold is filled with information from the <a class="code-snippet-link" href="./api.html#DataHoldversion">DataHold.version</a>. For greatest accuracy, use with 
+                        <a class="code-snippet-link" href="./api.html#DataHoldgetUpdate">DataHold.getUpdate()</a>.
+                        <br><br>
+                        Returns: <code class="code-snippet">None</code>
                         <br><br>
                     </p>
                 </section>

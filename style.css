@@ -80,10 +80,11 @@
     display: flex;
 }
 .api-classes-holder{
-    width: 15%;
+    width: 15vw;
     display: grid;
     align-items: center;
     border-right: 2px solid #666;
+    overflow-x: scroll;
 }
 .api-classes{
     font-family: Arial, Helvetica, sans-serif;
@@ -96,9 +97,10 @@
     cursor: pointer;
 }
 .api-text{
-    width: 80%;
+    width: 85vw;
     margin-left: 2em;
     overflow-y: scroll;
+    /* overflow-x: scroll; */
     height: 90vh;
 }
 .api-header{
@@ -164,7 +166,7 @@
     margin-left: auto;
     margin-right: auto;
     border-top: 2px solid #666;
-    width: 40%;
+    width: 80%;
     font-family: consolas;
     font-size: medium;
     font-weight: bold;
@@ -194,10 +196,17 @@
     background-color: #444;
     color: #CCC;
 }
-/*universal*/
 ::-webkit-scrollbar{
-    color: #666;
+    width: 0.5vw;
+    height: 0.5vh;
     background-color: #222;
+}
+::-webkit-scrollbar-thumb{
+    color: #AAA;
+    background-color: #AAA;
+}
+::-webkit-scrollbar-track{
+    background:#222;
 }
 /*background*/
 .dark-gray{
