@@ -834,14 +834,92 @@
                             <a class="attr" href="./api.html#RankInfoseries">RankInfo.series</a>
                         </div>
                         <div class="class-methods">
-                            <a class="attr" href="./api.html#RankInfo">RankInfo.isSolo()</a>
+                            <a class="attr" href="./api.html#RankInfoisSolo">RankInfo.isSolo()</a>
                         </div>
                     </div>
-                    <h1 class="code-header" id="SummonerleagueId">Summoner.leagueId</h1>
+                    <h1 class="code-header" id="RankInfoleagueId">RankInfo.leagueId</h1>
                     <p class="code-desc">
                         The ID of the league that the summoner is in.
                         <br><br>
                         Type: <code class="code-snippet">str</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="RankInfoqueueType">RankInfo.queueType</h1>
+                    <p class="code-desc">
+                        The queueType which can be used to identify the queueId with the DataHold.
+                        <br><br>
+                        Type: <code class="code-snippet">str</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="RankInfoqueueName">RankInfo.queueName</h1>
+                    <p class="code-desc">
+                        A more visually pleasing version of queueType.
+                        <br><br>
+                        Type: <code class="code-snippet">str</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="RankInfotier">RankInfo.tier</h1>
+                    <p class="code-desc">
+                        The ranked tier of the summoner (eg. Gold).
+                        <br><br>
+                        Type: <code class="code-snippet">str</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="RankInfodivision">RankInfo.division</h1>
+                    <p class="code-desc">
+                        The ranked division of the summoner (eg. I - IV).
+                        <br><br>
+                        Type: <code class="code-snippet">str</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="RankInfolp">RankInfo.lp</h1>
+                    <p class="code-desc">
+                        The amount of lp for a certain division that the summoner has.
+                        <br><br>
+                        Type: <code class="code-snippet">int</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="RankInfowins">RankInfo.wins</h1>
+                    <p class="code-desc">
+                        The amount of wins that the summoner has this season.
+                        <br><br>
+                        Type: <code class="code-snippet">int</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="RankInfolosses">RankInfo.losses</h1>
+                    <p class="code-desc">
+                        The amount of losses that the summoner has this season.
+                        <br><br>
+                        Type: <code class="code-snippet">int</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="RankInfohotStreak">RankInfo.hotStreak</h1>
+                    <p class="code-desc">
+                        If the summoner is on a hot streak.
+                        <br><br>
+                        Type: <code class="code-snippet">bool</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="RankInfoinactive">RankInfo.inactive</h1>
+                    <p class="code-desc">
+                        If the summoner has been inactive recently.
+                        <br><br>
+                        Type: <code class="code-snippet">bool</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="RankInfoseries">RankInfo.series</h1>
+                    <p class="code-desc">
+                        If the summoner is in promos then this will be a dictionary of the information for the series.
+                        <br><br>
+                        Type: <code class="code-snippet">dict{str: str}</code> or <code class="code-snippet">None</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="RankInfoisSolo">RankInfo.isSolo()</h1>
+                    <span class="code-snippet">RankInfo.isSolo()</span>
+                    <p class="code-desc">
+                        Returns whether or not the queue is Ranked Solo/Duo or not.
+                        <br><br>
+                        Returns: <code class="code-snippet">isSolo: bool</code>
                         <br><br>
                     </p>
                 </section>
