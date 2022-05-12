@@ -52,6 +52,23 @@
                     <p class="api-paragraph">
                         Welcome to the scff python framework for the league of legends api. Current version: scff.py 0.7
                     </p>
+                    <h1 class="code-header">Important Notes</h1>
+                    <p class="code-desc">
+                        The framework heavily depends on the Python Requests library and, because of this requires headers to emulate a 
+                        browser and send data to the League API. The User class handles this for you, but if you choose not to use it,
+                        you can make your own headers following the structure below.
+                    </p>
+                    <h1 class="code-header">Header Structure Example</h1>
+                    <p class="code-desc">
+                        <code class="code-snippet">
+                            headers = {
+                            <br><br>&nbsp&nbsp"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36",
+                            <br><br>&nbsp&nbsp"Accept-Language": "en-US,en;q=0.9",
+                            <br><br>&nbsp&nbsp"Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
+                            <br><br>&nbsp&nbsp"X-Riot-Token": *YOUR_API_KEY_AS_STRING*
+                            <br><br>}
+                        </code>
+                    </p>
                 </section>
                 <section id="User">
                     <h1 class="api-header">User</h1>
@@ -265,10 +282,10 @@
                             <a class="attr" href="./api.html#DataHoldgetRuneImg">DataHold.getRuneImg()</a>
                             <a class="attr" href="./api.html#DataHoldgetPerkStyleName">DataHold.getPerkStyleName()</a>
                             <a class="attr" href="./api.html#DataHoldgetChampionName">DataHold.getChampionName()</a>
-                            <a class="attr" href="./api.html#DataHoldgetChampionImgFull">DataHold.getChampionImgFull()</a>
+                            <a class="attr" href="./api.html#DataHoldgetChampionIconImg">DataHold.getChampionIconImg()</a>
                             <a class="attr" href="./api.html#DataHoldgetChampionBlurb">DataHold.getChampionBlurb()</a>
                             <a class="attr" href="./api.html#DataHoldgetChampionTitle">DataHold.getChampionTitle()</a>
-                            <a class="attr" href="./api.html#DataHoldgetRegionByPlatform">DataHold.getRegionByPlatform()</a>
+                            <a class="attr" href="./api.html#DataHoldgetRegionalByPlatform">DataHold.getRegionalByPlatform()</a>
                             <a class="attr" href="./api.html#DataHoldisAlive">DataHold.isAlive()</a>
                             <a class="attr" href="./api.html#DataHoldclose">DataHold.close()</a>
                         </div>
@@ -452,17 +469,380 @@
                         Returns: <code class="code-snippet">None</code>
                         <br><br>
                     </p>
+                    <h1 class="code-header" id="DataHoldgetSpellName">DataHold.getSpellName()</h1>
+                    <span class="code-snippet">DataHold.getSpellName(idnum, default=None)</span>
+                    <p class="code-desc">
+                        Returns the spell name from a given id number. 
+                        <br><br>
+                        Requires: <code class="code-snippet">idnum: int</code>
+                        <br><br>
+                        Optional: <code class="code-snippet">default: any</code> - What is returned if the id number doesn't exist.
+                        <br><br>
+                        Returns: <code class="code-snippet">spellName: str</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="DataHoldgetRuneName">DataHold.getRuneName()</h1>
+                    <span class="code-snippet">DataHold.getSpellName(idnum, default=None)</span>
+                    <p class="code-desc">
+                        Returns the rune name from a given id number. 
+                        <br><br>
+                        Requires: <code class="code-snippet">idnum: int</code>
+                        <br><br>
+                        Optional: <code class="code-snippet">default: any</code> - What is returned if the id number doesn't exist.
+                        <br><br>
+                        Returns: <code class="code-snippet">runeName: str</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="DataHoldgetRuneImg">DataHold.getRuneImg()</h1>
+                    <span class="code-snippet">DataHold.getRuneImg(idnum, default=None)</span>
+                    <p class="code-desc">
+                        Returns the spell img url from a given id number. 
+                        <br><br>
+                        Requires: <code class="code-snippet">idnum: int</code>
+                        <br><br>
+                        Optional: <code class="code-snippet">default: any</code> - What is returned if the id number doesn't exist.
+                        <br><br>
+                        Returns: <code class="code-snippet">runeImg: str</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="DataHoldgetPerkStyleName">DataHold.PerkStyleName()</h1>
+                    <span class="code-snippet">DataHold.getPerkStyleName(idnum, default=None)</span>
+                    <p class="code-desc">
+                        Returns the perk style name from a given id number. 
+                        <br><br>
+                        Requires: <code class="code-snippet">idnum: int</code>
+                        <br><br>
+                        Optional: <code class="code-snippet">default: any</code> - What is returned if the id number doesn't exist.
+                        <br><br>
+                        Returns: <code class="code-snippet">perkStyleName: str</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="DataHoldgetChampionName">DataHold.getChampionName()</h1>
+                    <span class="code-snippet">DataHold.getChampionName(idnum, default=None)</span>
+                    <p class="code-desc">
+                        Returns the champion name from a given id number. 
+                        <br><br>
+                        Requires: <code class="code-snippet">idnum: int</code>
+                        <br><br>
+                        Optional: <code class="code-snippet">default: any</code> - What is returned if the id number doesn't exist.
+                        <br><br>
+                        Returns: <code class="code-snippet">championName: str</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="DataHoldgetChampionIconImg">DataHold.getChampionIconImg()</h1>
+                    <span class="code-snippet">DataHold.getChampionIconImg(idnum, default=None)</span>
+                    <p class="code-desc">
+                        Returns the champion icon img text from a given id number. Needs to added the DataDragon link (https://ddragon.leagueoflegends.com/cdn/12.9.1/img/champion/*LINK_HERE*)
+                        <br><br>
+                        Requires: <code class="code-snippet">idnum: int</code>
+                        <br><br>
+                        Optional: <code class="code-snippet">default: any</code> - What is returned if the id number doesn't exist.
+                        <br><br>
+                        Returns: <code class="code-snippet">iconImgFullUrl: str</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="DataHoldgetChampionBlurb">DataHold.getChampionBlurb()</h1>
+                    <span class="code-snippet">DataHold.getChampionBlurb(idnum, default=None)</span>
+                    <p class="code-desc">
+                        Returns the champion blurb from a given id number. 
+                        <br><br>
+                        Requires: <code class="code-snippet">idnum: int</code>
+                        <br><br>
+                        Optional: <code class="code-snippet">default: any</code> - What is returned if the id number doesn't exist.
+                        <br><br>
+                        Returns: <code class="code-snippet">championBlurb: str</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="DataHoldgetChampionTitle">DataHold.getChampionTitle()</h1>
+                    <span class="code-snippet">DataHold.getChampionTitle(idnum, default=None)</span>
+                    <p class="code-desc">
+                        Returns the champion title from a given id number. 
+                        <br><br>
+                        Requires: <code class="code-snippet">idnum: int</code>
+                        <br><br>
+                        Optional: <code class="code-snippet">default: any</code> - What is returned if the id number doesn't exist.
+                        <br><br>
+                        Returns: <code class="code-snippet">championTitle: str</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="DataHoldgetRegionalByPlatform">DataHold.getRegionalByPlatform()</h1>
+                    <span class="code-snippet">DataHold.getRegionalByPlatform(idnum, default=None)</span>
+                    <p class="code-desc">
+                        Returns the regional link given a platform. 
+                        <br><br>
+                        Requires: <code class="code-snippet">idnum: int</code>
+                        <br><br>
+                        Optional: <code class="code-snippet">default: any</code> - What is returned if the id number doesn't exist.
+                        <br><br>
+                        Returns: <code class="code-snippet">regionalLink: str</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="DataHoldisAlive">DataHold.isAlive()</h1>
+                    <span class="code-snippet">DataHold.isAlive()</span>
+                    <p class="code-desc">
+                        Returns true if the DataHold exists. Used by the <a class="code-snippet-link" href="./api.html#User">User</a> class. 
+                        <br><br>
+                        Returns: <code class="code-snippet">isAlive: bool</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="DataHoldclose">DataHold.close()</h1>
+                    <span class="code-snippet">DataHold.close(filename="datahold.json")</span>
+                    <p class="code-desc">
+                        Saves the <a class="code-snippet-link" href="./api.html#DataHold">DataHold</a> class as a file in the current directory.
+                        <br><br>
+                        Optional: <code class="code-snippet">filename: str</code> - If you want a custom filename you can add one here
+                        <br><br>
+                        Returns: <code class="code-snippet">None</code>
+                        <br><br>
+                    </p>
                 </section>
                 <section id="Summoner">
                     <h1 class="api-header">Summoner</h1>
                     <p class="api-paragraph">
-                        Testing
+                        The holder for information and methods pertaining to summoner account. Most methods must be accessed through the 
+                        <a class="code-snippet-link" href="./api.html#User">User</a> class, since they require an API key.
+                    </p>
+                    <div class="class-desc">
+                        <div class="class-attr">
+                            <a class="attr" href="./api.html#Summonerexist">Summoner.exist</a>
+                            <a class="attr" href="./api.html#SummonersummonerName">Summoner.summonerName</a>
+                            <a class="attr" href="./api.html#SummonerencryptedId">Summoner.encryptedId</a>
+                            <a class="attr" href="./api.html#Summonerpuiid">Summoner.puuid</a>
+                            <a class="attr" href="./api.html#Summonerranks">Summoner.ranks</a>
+                            <a class="attr" href="./api.html#SummonericonId">Summoner.iconId</a>
+                            <a class="attr" href="./api.html#SummonerrevisionDate">Summoner.revisionDate</a>
+                            <a class="attr" href="./api.html#Summonerlevel">Summoner.level</a>
+                            <a class="attr" href="./api.html#Summonerregion">Summoner.region</a>
+                            <a class="attr" href="./api.html#SummonerregionalLink">Summoner.regionalLink</a>
+                        </div>
+                        <div class="class-methods">
+                            <a class="attr" href="./api.html#SummonerupdateRank">Summoner.updateRank()</a>
+                            <a class="attr" href="./api.html#SummonergetRankedSolo">Summoner.getRankedSolo()</a>
+                            <a class="attr" href="./api.html#SummonergetCurrentMatch">Summoner.getCurrentMatch()</a>
+                            <a class="attr" href="./api.html#SummonergetMatchHistory">Summoner.getMatchHistory()</a>
+                            <a class="attr" href="./api.html#SummonergetMatchById">Summoner.getMatchById()</a>
+                            <a class="attr" href="./api.html#SummonergetMatchDictById">Summoner.getMatchDictById()</a>
+                            <a class="attr" href="./api.html#SummonerisAlive">Summoner.isAlive()</a>
+
+                        </div>
+                    </div>
+                    <h1 class="code-header">Constructor</h1>
+                    <span class="code-snippet">Summoner(name, headers, region, regionalLink=None)</span>
+                    <p class="code-desc">
+                        Creates a <a class="code-snippet-link" href="./api.html#Summoner">Summoner</a> which can act independently from <a class="code-snippet-link" href="./api.html#UsercreateSummoner">User.createSummoner()</a>, but it
+                        is better to use the <a class="code-snippet-link" href="./api.html#User">User</a> method.
+                        <br><br>
+                        Requires: <code class="code-snippet">name: str</code> - The summoner's in game name
+                        <br><br>
+                        Requires: <code class="code-snippet">headers: dict{str: str}</code> - If accessed by the 
+                        <a class="code-snippet-link" href="./api.html#User">User</a> class then the headers 
+                        are provided. If not, the key must be provided in the headers. See <a class="code-snippet-link" href="./api.html#Intro">Intro</a>.
+                        <br><br>
+                        Requires: <code class="code-snippet">region: str</code> - See DataDragons list of regions if unsure of the different regions.
+                        <br><br>
+                        Optional: <code class="code-snippet">regionalLink: str</code> - This needs to be provided if you want to use commands that work with past matches. See DataDragon for details.
+                        <br><br>
+                        Returns: <a class="code-snippet-link" href="./api.html#Summoner">Summoner: Summoner</a>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="Summonerexist">Summoner.exist</h1>
+                    <p class="code-desc">
+                        Ensures that the request for summoner information goes through. If not then the 
+                        <a class="code-snippet-link" href="./api.html#Summoner">Summoner</a> object does not exist.
+                        <br><br>
+                        Type: <code class="code-snippet">bool</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="SummonersummonerName">Summoner.summonerName</h1>
+                    <p class="code-desc">
+                        The summoners display name which is seen to other players.
+                        <br><br>
+                        Type: <code class="code-snippet">str</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="SummonerencryptedId">Summoner.encryptedId</h1>
+                    <p class="code-desc">
+                        The ID associated with fetching information about summoners rank.
+                        <br><br>
+                        Type: <code class="code-snippet">str</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="Summonerpuuid">Summoner.puuid</h1>
+                    <p class="code-desc">
+                        The ID associated with fetching information about summoners match history.
+                        <br><br>
+                        Type: <code class="code-snippet">str</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="Summonerranks">Summoner.ranks</h1>
+                    <p class="code-desc">
+                        Initially blank, but upon requesting ranked information, it is populated with RankInfo for each queue type.
+                        <br><br>
+                        Type: <a class="code-snippet-link" href="./api.html#RankInfo">list[RankInfo]</a>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="SummonericonId">Summoner.iconId</h1>
+                    <p class="code-desc">
+                        The ID of the summoner's icon. The image can be fetched from DataDragon with (http://ddragon.leagueoflegends.com/cdn/12.9.1/img/profileicon/*ID_HERE*.png).
+                        <br><br>
+                        Type: <code class="code-snippet">str</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="SummonerrevisionDate">Summoner.revisionDate</h1>
+                    <p class="code-desc">
+                        The last time the account was modified in Epoch time.
+                        <br><br>
+                        Type: <code class="code-snippet">str</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="Summonerlevel">Summoner.level</h1>
+                    <p class="code-desc">
+                        The summoner's level.
+                        <br><br>
+                        Type: <code class="code-snippet">str</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="Summonerregion">Summoner.region</h1>
+                    <p class="code-desc">
+                        The summoner's current region which is used for fetching rank.
+                        <br><br>
+                        Type: <code class="code-snippet">str</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="SummonerregionalLink">Summoner.regionalLink</h1>
+                    <p class="code-desc">
+                        The summoner's current regional link which is used for fetching match history.
+                        <br><br>
+                        Type: <code class="code-snippet">str</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="SummonerupdateRank">Summoner.updateRank()</h1>
+                    <span class="code-snippet">Summoner.updateRank(headers)</span>
+                    <p class="code-desc">
+                        Fills <a class="code-snippet-link" href="./api.html#Summonerranks">Summoner.ranks</a> with 
+                        <a class="code-snippet-link" href="./api.html#RankInfo">RankInfo</a> objects.
+                        <br><br>
+                        Requires: <code class="code-snippet">headers: dict{str: str}</code> - If accessed by the 
+                        <a class="code-snippet-link" href="./api.html#User">User</a> class then the headers 
+                        are provided. If not, the key must be provided in the headers. See <a class="code-snippet-link" href="./api.html#Intro">Intro</a>.
+                        <br><br>
+                        Returns: <code class="code-snippet">None</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="SummonergetRankedSolo">Summoner.getRankedSolo()</h1>
+                    <span class="code-snippet">Summoner.updateRank(headers, default=None)</span>
+                    <p class="code-desc">
+                        Calls <a class="code-snippet-link" href="./api.html#updateRank">Summoner.updateRank()</a> and then returns the Ranked Solo/Duo information if it exists.
+                        <br><br>
+                        Requires: <code class="code-snippet">headers: dict{str: str}</code> - If accessed by the 
+                        <a class="code-snippet-link" href="./api.html#User">User</a> class then the headers 
+                        are provided. If not, the key must be provided in the headers. See <a class="code-snippet-link" href="./api.html#Intro">Intro</a>.
+                        <br><br>
+                        Optional: <code class="code-snippet">default: any</code> - What is returned if the summoner doesn't have a rank in Solo/Duo.
+                        <br><br>
+                        Returns: <a class="code-snippet-link" href="./api.html#RankInfo">rankedSoloDuoInfo: RankInfo</a>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="SummonergetCurrentMatch">Summoner.getCurrentMatch()</h1>
+                    <span class="code-snippet">Summoner.getCurrentMatch(headers, default=None)</span>
+                    <p class="code-desc">
+                        Returns a <a class="code-snippet-link" href="./api.html#LiveMatch">LiveMatch</a> of the current match if the summoner is in a match.
+                        <br><br>
+                        Requires: <code class="code-snippet">headers: dict{str: str}</code> - If accessed by the 
+                        <a class="code-snippet-link" href="./api.html#User">User</a> class then the headers 
+                        are provided. If not, the key must be provided in the headers. See <a class="code-snippet-link" href="./api.html#Intro">Intro</a>.
+                        <br><br>
+                        Optional: <code class="code-snippet">default: any</code> - What is returned if the summoner isn't in a match.
+                        <br><br>
+                        Returns: <a class="code-snippet-link" href="./api.html#LiveMatch">LiveMatch: LiveMatch</a>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="SummonergetMatchHistory">Summoner.getMatchHistory()</h1>
+                    <span class="code-snippet">Summoner.getMatchHistory(headers, count=20, default=None, queueType=None)</span>
+                    <p class="code-desc">
+                        Returns a list of the past <code class="code-snippet">count</code> matches in the for of their IDs. RegionalLink required.
+                        <br><br>
+                        Requires: <code class="code-snippet">headers: dict{str: str}</code> - If accessed by the 
+                        <a class="code-snippet-link" href="./api.html#User">User</a> class then the headers 
+                        are provided. If not, the key must be provided in the headers. See <a class="code-snippet-link" href="./api.html#Intro">Intro</a>.
+                        <br><br>
+                        Requires: <code class="code-snippet">count: int</code> - Max of 100
+                        <br><br>
+                        Optional: <code class="code-snippet">default: any</code> - What is returned if the id number doesn't exist.
+                        <br><br>
+                        Returns: <code class="code-snippet">matches: list[str]</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="SummonergetMatchById">Summoner.getMatchById()</h1>
+                    <span class="code-snippet">Summoner.getMatchById(headers, idnum, default=None)</span>
+                    <p class="code-desc">
+                        Returns a matches info as a <a class="code-snippet-link" href="./api.html#Match">Match</a> by a given match idnum. RegionalLink required.
+                        <br><br>
+                        Requires: <code class="code-snippet">headers: dict{str: str}</code> - If accessed by the 
+                        <a class="code-snippet-link" href="./api.html#User">User</a> class then the headers 
+                        are provided. If not, the key must be provided in the headers. See <a class="code-snippet-link" href="./api.html#Intro">Intro</a>.
+                        <br><br>
+                        Requires: <code class="code-snippet">idnum: str</code>
+                        <br><br>
+                        Optional: <code class="code-snippet">default: any</code> - What is returned if the id number doesn't exist.
+                        <br><br>
+                        Returns: <a class="code-snippet-link" href="./api.html#Match">Match: Match</a>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="SummonergetMatchDictById">Summoner.getMatchDictById()</h1>
+                    <span class="code-snippet">Summoner.getMatchDictById(headers, idnum, default=None)</span>
+                    <p class="code-desc">
+                        Returns a matches info as a python dictionary by a given match idnum. RegionalLink required.
+                        <br><br>
+                        Requires: <code class="code-snippet">headers: dict{str: str}</code> - If accessed by the 
+                        <a class="code-snippet-link" href="./api.html#User">User</a> class then the headers 
+                        are provided. If not, the key must be provided in the headers. See <a class="code-snippet-link" href="./api.html#Intro">Intro</a>.
+                        <br><br>
+                        Requires: <code class="code-snippet">idnum: str</code>
+                        <br><br>
+                        Optional: <code class="code-snippet">default: any</code> - What is returned if the id number doesn't exist.
+                        <br><br>
+                        Returns: <code class="code-snippet">match: dict{}</code> - Dict has many layers, so it is worth looking at once to get a feel.
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="SummonergetisAlive">Summoner.isAlive()</h1>
+                    <span class="code-snippet">Summoner.isAlive()</span>
+                    <p class="code-desc">
+                        Used to determine if the object correctly initialized.
+                        <br><br>
+                        Returns: <code class="code-snippet">isAlive: bool</code>
+                        <br><br>
                     </p>
                 </section>
                 <section id="RankInfo">
                     <h1 class="api-header">RankInfo</h1>
                     <p class="api-paragraph">
-                        Testing
+                    Holds all information for a summoner's rank statistics. Each queue type has its own <a class="code-snippet-link" href="./api.html#RankInfo">RankInfo</a>. Cannot be created on its own.
+                    </p>
+                    <div class="class-desc">
+                        <div class="class-attr">
+                            <a class="attr" href="./api.html#RankInfoleagueId">RankInfo.leagueId</a>
+                            <a class="attr" href="./api.html#RankInfoqueueType">RankInfo.queueType</a>
+                            <a class="attr" href="./api.html#RankInfoqueueName">RankInfo.queueName</a>
+                            <a class="attr" href="./api.html#RankInfotier">RankInfo.tier</a>
+                            <a class="attr" href="./api.html#RankInfodivision">RankInfo.division</a>
+                            <a class="attr" href="./api.html#RankInfolp">RankInfo.lp</a>
+                            <a class="attr" href="./api.html#RankInfowins">RankInfo.wins</a>
+                            <a class="attr" href="./api.html#RankInfolosses">RankInfo.losses</a>
+                            <a class="attr" href="./api.html#RankInfohotStreak">RankInfo.hotStreak</a>
+                            <a class="attr" href="./api.html#RankInfoinactive">RankInfo.inactive</a>
+                            <a class="attr" href="./api.html#RankInfoseries">RankInfo.series</a>
+                        </div>
+                        <div class="class-methods">
+                            <a class="attr" href="./api.html#RankInfo">RankInfo.isSolo()</a>
+                        </div>
+                    </div>
+                    <h1 class="code-header" id="SummonerleagueId">Summoner.leagueId</h1>
+                    <p class="code-desc">
+                        The ID of the league that the summoner is in.
+                        <br><br>
+                        Type: <code class="code-snippet">str</code>
+                        <br><br>
                     </p>
                 </section>
                 <section id="Match">
