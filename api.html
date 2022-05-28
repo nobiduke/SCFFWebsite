@@ -2,7 +2,9 @@
 <html>
     <head>
         <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="./favicon.png">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>API</title>
     </head>
     <body class="dark-gray">
         <div class="main-top" id="main-top">
@@ -926,7 +928,101 @@
                 <section id="Match">
                     <h1 class="api-header">Match</h1>
                     <p class="api-paragraph">
-                        Testing
+                        The container class for past match data. Can be paired with the 
+                        <code class="code-snippet-link" href="./api.html#DataHold">DataHold</code> 
+                        in order to return a <code class="code-snippet-link" href="./api.html#Player">Player</code> 
+                        from the match
+                    </p>
+                    <div class="class-desc">
+                        <div class="class-attr">
+                            <a class="attr" href="./api.html#MatchgameId">Match.gameId</a>
+                            <a class="attr" href="./api.html#MatchstartTimeStamp">Match.startTimeStamp</a>
+                            <a class="attr" href="./api.html#Matchduration">Match.duration</a>
+                            <a class="attr" href="./api.html#MatchgameMode">Match.gameMode</a>
+                            <a class="attr" href="./api.html#MatchmapId">Match.mapId</a>
+                            <a class="attr" href="./api.html#Matchteams">Match.teams</a>
+                            <a class="attr" href="./api.html#Matchparticipants">Match.participants</a>
+                        </div>
+                        <div class="class-methods">
+                            <a class="attr" href="./api.html#MatchgetSummoner">Match.getSummoner()</a>
+                            <a class="attr" href="./api.html#MatchgetInfo">Match.getInfo()</a>
+                        </div>
+                    </div>
+                    <h1 class="code-header" id="MatchgameId">Match.gameId</h1>
+                    <p class="code-desc">
+                        The unique id for the match.
+                        <br><br>
+                        Type: <code class="code-snippet">str</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="MatchstartTimeStamp">Match.startTimeStamp</h1>
+                    <p class="code-desc">
+                        The time stamp for the beginning of the game in Epoch Time as a string.
+                        <br><br>
+                        Type: <code class="code-snippet">str</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="Matchduration">Match.duration</h1>
+                    <p class="code-desc">
+                        The duration of the match in seconds.
+                        <br><br>
+                        Type: <code class="code-snippet">str</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="MatchgameMode">Match.gameMode</h1>
+                    <p class="code-desc">
+                        Game mode id as a string. Refer to the <a class="code-snippet-link" href="./api.html#DataHold">DataHold</a>.
+                        <br><br>
+                        Type: <code class="code-snippet">str</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="MatchmapId">Match.mapId</h1>
+                    <p class="code-desc">
+                        Map id as a string. Refer to the <a class="code-snippet-link" href="./api.html#DataHold">DataHold</a>.
+                        <br><br>
+                        Type: <code class="code-snippet">str</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="Matchteams">Match.teams</h1>
+                    <p class="code-desc">
+                        Dictionary which contains two lists with the names of each player in the game on which team they are on.
+                        <br><br>
+                        Type: <code class="code-snippet">dict{str: list[str]}</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="Matchparticipants">Match.participants</h1>
+                    <p class="code-desc">
+                        Dictionary of players represented as dictionaries of statistics. Used by 
+                        <a class="code-snippet-link" href="./api.html#MatchgetSummoner">Match.getSummoner()</a>
+                        to create a <a class="code-snippet-link" href="./api.html#Player">Player</a>. The dictionary 
+                        is organized by summoner name.
+                        <br><br>
+                        Type: <code class="code-snippet">dict{str: dict{...}}</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="MatchgetSummoner">Match.getSummoner()</h1>
+                    <span class="code-snippet">Match.getSummoner(name, data, default=None)</span>
+                    <p class="code-desc">
+                        Using the <a class="code-snippet-link" href="./api.html#DataHold">DataHold</a> a 
+                        <a class="code-snippet-link" href="./api.html#Player">Player</a> is returned from the
+                        <a class="code-snippet-link" href="./api.html#Match">Match</a>.
+                        <br><br>
+                        Requires: <code class="code-snippet">name: str</code>
+                        <br><br>
+                        Requires: <a class="code-snippet-link" href="./api.html#DataHold">data: DataHold</a>
+                        <br><br>
+                        Optional: <code class="code-snippet">default: any</code>  - What is returned if summoner name is not in the match.
+                        <br><br>
+                        Returns: <a class="code-snippet-link" href="./api.html#Player">Player: Player</a>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="MatchInfo">Match.getInfo()</h1>
+                    <span class="code-snippet">Match.getInfo()</span>
+                    <p class="code-desc">
+                        Returns statistics about the match in a dictionary.
+                        <br><br>
+                        Returns: <code class="code-snippet">dict{str: str}</code>
+                        <br><br>
                     </p>
                 </section>
                 <section id="Player">
