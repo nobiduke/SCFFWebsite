@@ -11,3 +11,6 @@ function openHome(){
 function openAPI(){
     window.open("./api.html", "_self");
 }
+function openAboutMe(){
+    window.open("./about.html", "_self");
+}
