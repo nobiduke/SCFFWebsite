@@ -1033,11 +1033,11 @@
                     </p>
                     <div class="class-desc">
                         <div class="class-attr">
-                            <a class="attr" href="./api.html#PlayerIdentity">Identity</a>
-                            <a class="attr" href="./api.html#PlayerUsefulStats">Useful Stats</a>
-                            <a class="attr" href="./api.html#PlayerFunStats">Fun Stats</a>
-                            <a class="attr" href="./api.html#PlayerIds">Ids</a>
-                            <a class="attr" href="./api.html#PlayerNames">Names</a>
+                            <a class="attr" href="./api.html#PlayerIdentity">Player Identity</a>
+                            <a class="attr" href="./api.html#PlayerUsefulStats">Player Useful Stats</a>
+                            <a class="attr" href="./api.html#PlayerFunStats">Player Fun Stats</a>
+                            <a class="attr" href="./api.html#PlayerIds">Player Ids</a>
+                            <a class="attr" href="./api.html#PlayerNames">Player Names</a>
 
                         </div>
                         <div class="class-methods">
@@ -1209,7 +1209,79 @@
                 <section id="LivePlayer">
                     <h1 class="api-header">LivePlayer</h1>
                     <p class="api-paragraph">
-                        Testing
+                        The container for a player within a live game. It is soft-loaded and requires 
+                        a <a class="code-snippet-link" href="./api.html#DataHold">DataHold</a> to get the 
+                        <a class="code-snippet-link" href="./api.html#LivePlayerNames">Player Names</a> portion.
+                    </p>
+                    <div class="class-desc">
+                        <div class="class-attr">
+                            <a class="attr" href="./api.html#LivePlayerIdentity">LivePlayer Identity</a>
+                            <a class="attr" href="./api.html#LivePlayerIds">LivePlayer Ids</a>
+                            <a class="attr" href="./api.html#LivePlayerNames">LivePlayer Names</a>
+
+                        </div>
+                        <div class="class-methods">
+                            <a class="attr" href="./api.html#LivePlayergetStartInfo">LivePlayer.updateInfo()</a>
+                            <a class="attr" href="./api.html#LivePlayergetKda">LivePlayer.fill()</a>
+                            <a class="attr" href="./api.html#LivePlayergetTimeDead">LivePlayer.getGameInfo()</a>
+                        </div>
+                    </div>
+                    <h1 class="code-header" id="LivePlayerIdentity">LivePlayer's Identity</h1>
+                    <span class="code-snippet">LivePlayer.summonerName: str</span><br>
+                    <span class="code-snippet">LivePlayer.summonerId: str</span><br>
+                    <span class="code-snippet">LivePlayer.teamName: str</span><br>
+                    <span class="code-snippet">LivePlayer.teamId: str</span><br>
+                    <h1 class="code-header" id="LivePlayerIds">LivePlayer's IDs</h1>
+                    <span class="code-snippet">LivePlayer.perkStyleId: str</span><br>
+                    <span class="code-snippet">LivePlayer.perkSubStyleId: str</span><br>
+                    <span class="code-snippet">LivePlayer.perkIds: list[int]</span><br>
+                    <span class="code-snippet">LivePlayer.spell1Id: str</span><br>
+                    <span class="code-snippet">LivePlayer.spell2Id: str</span><br>
+                    <span class="code-snippet">LivePlayer.championId: str</span><br>
+                    <span class="code-snippet">LivePlayer.profileIconId: str</span><br>
+                    <h1 class="code-header" id="LivePlayerNames">LivePlayer's Names</h1>
+                    <p class="code-desc">
+                        Requires the use of <a class="code-snippet-link" href="./api.html#LivePlayerupdateInfo">LivePlayer.updateInfo()</a>
+                        and a <a class="code-snippet-link" href="./api.html#DataHold">DataHold</a>.
+                    </p>
+                    <span class="code-snippet">LivePlayer.championName: str</span><br>
+                    <span class="code-snippet">LivePlayer.perkStyle: str</span><br>
+                    <span class="code-snippet">LivePlayer.perkSubStyle: str</span><br>
+                    <span class="code-snippet">LivePlayer.perkNames: str</span><br>
+                    <span class="code-snippet">LivePlayer.spell1: str</span><br>
+                    <span class="code-snippet">LivePlayer.spell2: str</span><br>
+                    <h1 class="code-header" id="LivePlayerupdateInfo">LivePlayer.updateInfo()</h1>
+                    <span class="code-snippet">LivePlayer.updateInfo(data)</span><br>
+                    <p class="code-desc">
+                        Loads the <a class="code-snippet-link" href="./api.html#LivePlayerNames">LivePlayer Names</a>
+                        <br><br>
+                        Requires: <a class="code-snippet-link" href="./api.html#DataHold">data: DataHold</a>
+                        <br><br>
+                        Returns: <code class="code-snippet">None</code>
+                        <br><br>
+                    </p>   
+                    <h1 class="code-header" id="LivePlayerfill">LivePlayer.fill()</h1>
+                    <span class="code-snippet">LivePlayer.fill(data)</span><br>
+                    <p class="code-desc">
+                        Checks if the LivePlayer has been loaded and if not then 
+                        <a class="code-snippet-link" href="./api.html#LivePlayerupdateInfo">LivePlayer.updateInfo()</a> 
+                        is called.
+                        <br><br>
+                        Requires: <a class="code-snippet-link" href="./api.html#DataHold">data: DataHold</a>
+                        <br><br>
+                        Returns: <code class="code-snippet">None</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="LivePlayergetGameInfo">LivePlayer.getGameInfo()</h1>
+                    <span class="code-snippet">LivePlayer.fill(data)</span><br>
+                    <p class="code-desc">
+                        Calls <a class="code-snippet-link" href="./api.html#LivePlayerfill">LivePlayer.fill()</a> 
+                        and then returns information about the player within the match.
+                        <br><br>
+                        Requires: <a class="code-snippet-link" href="./api.html#DataHold">data: DataHold</a>
+                        <br><br>
+                        Returns: <code class="code-snippet">gameInfo: dict{str: str}</code>
+                        <br><br>
                     </p>
                 </section>
             </div>
