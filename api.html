@@ -56,7 +56,7 @@
                     </p>
                     <h1 class="code-header">Important Notes</h1>
                     <p class="code-desc">
-                        The framework heavily depends on the Python Requests library and, because of this requires headers to emulate a 
+                        The framework heavily depends on the Python Requests library and, because of this, requires headers to emulate a 
                         browser and send data to the League API. The User class handles this for you, but if you choose not to use it,
                         you can make your own headers following the structure below.
                     </p>
@@ -1028,7 +1028,87 @@
                 <section id="Player">
                     <h1 class="api-header">Player</h1>
                     <p class="api-paragraph">
-                        Testing
+                        The container for statistics and information about a player from a past 
+                        <a class="code-snippet-link" href="./api.html#Match">Match</a>.
+                    </p>
+                    <div class="class-desc">
+                        <div class="class-attr">
+                            <a class="attr" href="./api.html#PlayerIdentity">Identity</a>
+                            <a class="attr" href="./api.html#PlayerUsefulStats">Useful Stats</a>
+                            <a class="attr" href="./api.html#PlayerFunStats">Fun Stats</a>
+                            <a class="attr" href="./api.html#PlayerIds">Ids</a>
+                            <a class="attr" href="./api.html#PlayerNames">Names</a>
+
+                        </div>
+                        <div class="class-methods">
+                            <a class="attr" href="./api.html#PlayergetStartInfo">Player.getStartInfo()</a>
+                            <a class="attr" href="./api.html#PlayergetKda">Player.getKda()</a>
+                            <a class="attr" href="./api.html#PlayergetTimeDead">Player.getTimeDead()</a>
+                            <a class="attr" href="./api.html#PlayerreturnToMonkey">Player.returnToMonkey()</a>
+                        </div>
+                    </div>
+                    <h1 class="code-header" id="PlayerIdentity">Player's Identity</h1>
+                    <span class="code-snippet">Player.summonerId: str</span><br>
+                    <span class="code-snippet">Player.puuid: str</span><br>
+                    <span class="code-snippet">Player.teamId: str</span><br>
+                    <span class="code-snippet">Player.summonerName: str</span><br>
+                    <h1 class="code-header" id="PlayerUsefulStats">Player's Useful Stats</h1>
+                    <span class="code-snippet">Player.kills: int</span><br>
+                    <span class="code-snippet">Player.deaths: int</span><br>
+                    <span class="code-snippet">Player.assists: int</span><br>
+                    <span class="code-snippet">Player.visionScore: int</span><br>
+                    <span class="code-snippet">Player.champLevel: int</span><br>
+                    <span class="code-snippet">Player.totalDamage: int</span><br>
+                    <span class="code-snippet">Player.totalHealing: int</span><br>
+                    <span class="code-snippet">Player.turretKills: int</span><br>
+                    <span class="code-snippet">Player.win: bool</span><br>
+                    <h1 class="code-header" id="PlayerFunStats">Player's Fun Stats</h1>
+                    <span class="code-snippet">Player.abilityCasts: dict{'q': int, 'w': int, 'e': int, 'r': int, 's1': int, 's2': int}</span><br>
+                    <span class="code-snippet">Player.ccTime: int</span><br>
+                    <span class="code-snippet">Player.consumablesPurchased: int</span><br>
+                    <span class="code-snippet">Player.totalTimeSpentDead: int</span><br>
+                    <span class="code-snippet">Player.pentakills: int</span><br>
+                    <span class="code-snippet">Player.goldEarned: int</span><br>
+                    <span class="code-snippet">Player.baronKills: int</span><br>
+                    <span class="code-snippet">Player.challenges: dict{str: any}</span><br>
+                    <h1 class="code-header" id="PlayerIds">Player's IDs</h1>
+                    <span class="code-snippet">Player.championId: str</span><br>
+                    <span class="code-snippet">Player.spell1Id: str</span><br>
+                    <span class="code-snippet">Player.spell2Id: str</span><br>
+                    <span class="code-snippet">Player.perkStyleId: str</span><br>
+                    <span class="code-snippet">Player.perkSubStyleId: str</span><br>
+                    <span class="code-snippet">Player.perkIds: list[str]</span><br>
+                    <h1 class="code-header" id="PlayerNames">Player's Names</h1>
+                    <span class="code-snippet">Player.championName: str</span><br>
+                    <span class="code-snippet">Player.championImg: str</span><br>
+                    <span class="code-snippet">Player.spell1: str</span><br>
+                    <span class="code-snippet">Player.spell2: str</span><br>
+                    <span class="code-snippet">Player.perkStyle: str</span><br>
+                    <span class="code-snippet">Player.perkSubStyle: str</span><br>
+                    <span class="code-snippet">Player.perkNames: list[str]</span><br>
+                    <h1 class="code-header" id="PlayergetStartInfo">Player.getStartInfo()</h1>
+                    <span class="code-snippet">Player.getStartInfo()</span><br>
+                    <p class="code-desc">
+                        Returns basic statistics about the player in a dictionary.
+                        <br><br>
+                        Returns: <code class="code-snippet">dict{str: str}</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="PlayergetKda">Player.getKda()</h1>
+                    <span class="code-snippet">Player.getKda()</span><br>
+                    <p class="code-desc">
+                        Returns the KDA of the player in a dictionary.
+                        <br><br>
+                        Returns: <code class="code-snippet">dict{str: str}</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="PlayerreturnToMonkey">Player.returnToMonkey()</h1>
+                    <span class="code-snippet">Player.returnToMonkey()</span><br>
+                    <p class="code-desc">
+                        Returns the player class as a dictionary for storage.
+                        <br><br>
+                        Returns: <code class="code-snippet">dict{str: any}</code>
+                        <br><br>
                     </p>
                 </section>
                 <section id="LiveMatch">
