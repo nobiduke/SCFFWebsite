@@ -978,7 +978,7 @@
                     </p>
                     <h1 class="code-header" id="MatchmapId">Match.mapId</h1>
                     <p class="code-desc">
-                        Map id as a string. Refer to the <a class="code-snippet-link" href="./api.html#DataHold">DataHold</a>.
+                        Map id as a string. Refer to DataDragon.
                         <br><br>
                         Type: <code class="code-snippet">str</code>
                         <br><br>
@@ -1114,8 +1114,97 @@
                 <section id="LiveMatch">
                     <h1 class="api-header">LiveMatch</h1>
                     <p class="api-paragraph">
-                        Testing
+                        The container for information about 
+                        <a class="code-snippet-link" href="./api.html#Summoenr">Summoner</a> live game.
                     </p>
+                    <div class="class-desc">
+                        <div class="class-attr">
+                            <a class="attr" href="./api.html#LiveMatchgameId">LiveMatch.gameId</a>
+                            <a class="attr" href="./api.html#LiveMatchgameId">LiveMatch.mapId</a>
+                            <a class="attr" href="./api.html#LiveMatchgameMode">LiveMatch.gameMode</a>
+                            <a class="attr" href="./api.html#LiveMatchblue">LiveMatch.blue</a>
+                            <a class="attr" href="./api.html#LiveMatchred">LiveMatch.red</a>
+                            <a class="attr" href="./api.html#LiveMatchplayers">LiveMatch.players</a>
+                            <a class="attr" href="./api.html#LiveMatchyou">LiveMatch.you</a>
+                        </div>
+                        <div class="class-methods">
+                            <a class="attr" href="./api.html#LiveMatchgetNames">Match.getNames()</a>
+                            <a class="attr" href="./api.html#LiveMatchgetPlayer">Match.getPlayer()</a>
+                        </div>
+                    </div>
+                    <h1 class="code-header" id="LiveMatchgameId">LiveMatch.gameId</h1>
+                    <p class="code-desc">
+                        The ID number of the current match.
+                        <br><br>
+                        Type: <code class="code-snippet">str</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="LiveMatchmapId">LiveMatch.mapId</h1>
+                    <p class="code-desc">
+                        The ID number of the current map.
+                        <br><br>
+                        Type: <code class="code-snippet">str</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="LiveMatchgameMode">LiveMatch.gameMode</h1>
+                    <p class="code-desc">
+                        Game mode id as a string. Refer to the <a class="code-snippet-link" href="./api.html#DataHold">DataHold</a>.
+                        <br><br>
+                        Type: <code class="code-snippet">str</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="LiveMatchblue">LiveMatch.blue</h1>
+                    <p class="code-desc">
+                        The team members of the blue team given as soft-loaded 
+                        <a class="code-snippet-link" href="./api.html#LivePlayer">LivePlayer</a>.
+                        <br><br>
+                        Type: <a class="code-snippet-link" href="./api.html#LivePlayer">dict{str: LivePlayer}</a>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="LiveMatchred">LiveMatch.red</h1>
+                    <p class="code-desc">
+                        The team members of the red team given as soft-loaded 
+                        <a class="code-snippet-link" href="./api.html#LivePlayer">LivePlayer</a>.
+                        <br><br>
+                        Type: <a class="code-snippet-link" href="./api.html#LivePlayer">dict{str: LivePlayer}</a>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="LiveMatchplayers">LiveMatch.players</h1>
+                    <p class="code-desc">
+                        All players given as soft-loaded 
+                        <a class="code-snippet-link" href="./api.html#LivePlayer">LivePlayer</a>.
+                        <br><br>
+                        Type: <a class="code-snippet-link" href="./api.html#LivePlayer">dict{str: LivePlayer}</a>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="LiveMatchyou">LiveMatch.you</h1>
+                    <p class="code-desc">
+                        The player that the match was loaded from given as a soft-loaded  
+                        <a class="code-snippet-link" href="./api.html#LivePlayer">LivePlayer</a>.
+                        <br><br>
+                        Type: <a class="code-snippet-link" href="./api.html#LivePlayer">LivePlayer</a>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="LiveMatchgetNames">LiveMatch.getNames()</h1>
+                    <span class="code-snippet">LiveMatch.getNames()</span><br>
+                    <p class="code-desc">
+                        Returns a list of all player names from the match.
+                        <br><br>
+                        Returns: <code class="code-snippet">list[str]</code>
+                        <br><br>
+                    </p>
+                    <h1 class="code-header" id="LiveMatchgetPlayer">LiveMatch.getPlayer()</h1>
+                    <span class="code-snippet">LiveMatch.getPlayer(name, default=None)</span><br>
+                    <p class="code-desc">
+                        Returns a soft-loaded <a class="code-snippet-link" href="./api.html#LivePlayer"></a> by the summoner name.
+                        <br><br>
+                        Requires: <code class="code-snippet">name: str</code>
+                        <br><br>
+                        Optional: <code class="code-snippet">default: any</code> - What is returned if the name is not in the match.
+                        <br><br>
+                        Returns: <a class="code-snippet-link" href="./api.html#LivePlayer">LivePlayer</a>
+                        <br><br>
+                    </p>        
                 </section>
                 <section id="LivePlayer">
                     <h1 class="api-header">LivePlayer</h1>
